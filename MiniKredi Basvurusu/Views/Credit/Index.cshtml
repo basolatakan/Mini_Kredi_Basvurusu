@@ -1,0 +1,43 @@
+﻿@model MiniKredi_Basvurusu.ViewModels.CreditApplicationViewModel;
+
+<form asp-action="Index" method="post">
+    <h2 class="text-center mb-4">Kredi Başvuru</h2>
+
+    <div class="form-group mb-3">
+        <label asp-for="FirstName" class="form-label fw-bold"></label>
+        <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="LastName" class="form-label fw-bold"></label>
+        <input asp-for="LastName" class="form-control" placeholder="Enter your last name" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="MonthlyIncome" class="form-label fw-bold"></label>
+        <input asp-for="MonthlyIncome" class="form-control" placeholder="Enter your monthly income" />
+        <span asp-validation-for="MonthlyIncome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="RequestedCreditAmount" class="form-label fw-bold"></label>
+        <input asp-for="RequestedCreditAmount" class="form-control" placeholder="Enter your requested credit amount" />
+        <span asp-validation-for="RequestedCreditAmount" class="text-danger"></span>
+    </div>
+
+    <div class="d-grid">
+        <button type="submit" class="btn btn-success w-100">Başvur</button>
+    </div>
+
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info mt-3">@ViewBag.Message</div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
